@@ -37,6 +37,19 @@
     <div class="container">
       <h1>Pywebase starter template</h1>
       <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+      
+      <h1> About Pywebase</h1>
+      <p>Small platform for local web applications. It's based on the next components:
+      <ul>
+        <li><a href="http://bottlepy.org/">bottle.py</a> is a fast, simple and lightweight WSGI micro web-framework for Python. It is distributed as a single file module and has no dependencies other than the Python Standard Library.</li>
+        <li><a href="https://github.com/ownport/pyservice">pyservice</a> is simple library to make service on python more easy</li>
+        <li><a href="https://github.com/twitter/bootstrap">bootstrap</a> is HTML, CSS, and JS toolkit from Twitter</li>
+      </ul>
+      </p>
+
+      <h1> Contact </h1>
+      <p>Pywebase is available on GitHub <a href="https://github.com/ownport/pywebase">ownport/pywebase</a></p>
+
     </div> <!-- /container -->
     
     <!-- javascript -->
