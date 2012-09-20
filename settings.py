@@ -24,4 +24,10 @@ STATIC_PATH = os.path.join(os.getcwd(), 'static')
 # located
 TEMPLATE_PATH = os.path.join(os.getcwd(), 'templates')
 
+# The absolute path to the logfile
+PYWEBASE_LOGFILE = os.path.join(os.getcwd(), 'log/pywebase.log')
+
+# The absolute path to the pidfile. It's required when pywebase is 
+# running as service
+PYWEBASE_PIDFILE = os.path.join(os.getcwd(), 'run/pywebase.pid')
 

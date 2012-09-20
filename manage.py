@@ -40,8 +40,8 @@ def handle_index():
 # Process to run
 class BottleProcess(pyservice.Process):
 
-    pidfile = os.path.join(os.getcwd(), 'run/pywebase.pid')
-    logfile = os.path.join(os.getcwd(), 'log/pywebase.log')
+    pidfile = settings.PYWEBASE_PIDFILE
+    logfile = settings.PYWEBASE_LOGFILE
 
     def __init__(self):
         super(BottleProcess, self).__init__()
