@@ -38,26 +38,26 @@ def handle_index():
 
 # -----------------------------------------------
 # Process to run
-class BottleProcess(pyservice.Process):
+class PywebaseProcess(pyservice.Process):
 
     pidfile = settings.PYWEBASE_PIDFILE
     logfile = settings.PYWEBASE_LOGFILE
 
     def __init__(self):
-        super(BottleProcess, self).__init__()
+        super(PywebaseProcess, self).__init__()
         
         from BaseHTTPServer import BaseHTTPRequestHandler
         BaseHTTPRequestHandler.log_message = log_message
             
     def run(self):
-        logging.info('bottle.py {} server starting up'.format(bottle.__version__))
+        logging.info('pywebase {} server starting up'.format(bottle.__version__))
         bottle.TEMPLATE_PATH.append(settings.TEMPLATE_PATH)
         bottle.run(host='localhost', port=8080, debug=settings.DEBUG_MODE)
 
 if __name__ == '__main__':
 
     if len(sys.argv) == 2 and sys.argv[1] in 'start stop restart status'.split():
-        pyservice.service('manage.BottleProcess', sys.argv[1])
+        pyservice.service('manage.PywebaseProcess', sys.argv[1])
     else:
         print 'usage: manager <start,stop,restart,status>'
 
