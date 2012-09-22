@@ -2,6 +2,8 @@
 #   pywebase core
 #
 
+# TODO HTTPS support?
+
 import logging
 import settings
 
@@ -63,11 +65,13 @@ def handle_index():
 
 # login form
 # TODO https://github.com/bbrodriges/bottlepy-user-auth/blob/master/bottlepy_user_auth.py
+# TODO https://github.com/linsomniac/bottlesession
 def handle_login():
     return 
     
 # logout
 # TODO https://github.com/bbrodriges/bottlepy-user-auth/blob/master/bottlepy_user_auth.py
+# TODO https://github.com/linsomniac/bottlesession
 def handle_logout():
     return     
     
