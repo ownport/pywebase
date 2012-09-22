@@ -56,10 +56,12 @@ def handle_index():
     return bottle.template('index', dict(name='pywebase'))
 
 # login form
+# TODO https://github.com/bbrodriges/bottlepy-user-auth/blob/master/bottlepy_user_auth.py
 def handle_login():
     return 
     
 # logout
+# TODO https://github.com/bbrodriges/bottlepy-user-auth/blob/master/bottlepy_user_auth.py
 def handle_logout():
     return     
     
