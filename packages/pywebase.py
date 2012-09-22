@@ -15,6 +15,7 @@ def log_message(obj, format, *args):
 # -----------------------------------------------
 # Process to run
 # -----------------------------------------------
+
 class PywebaseProcess(pyservice.Process):
 
     pidfile = settings.PYWEBASE_PIDFILE
@@ -31,17 +32,22 @@ class PywebaseProcess(pyservice.Process):
         bottle.TEMPLATE_PATH.append(settings.TEMPLATE_PATH)
         bottle.run(host='localhost', port=8080, debug=settings.DEBUG_MODE)
 
+# TODO reloader – Start auto-reloading bottle.py server? (default: False)
+# TODO interval – Bottle.py auto-reloader interval in seconds (default: 1)
+
 # -----------------------------------------------
 # utils
 # -----------------------------------------------
 def add_routes(*routes):
-    ''' add static/dynamic routes '''
+    ''' add static/dynamic routes for bottle process'''
     for url, method, handler in routes:
         bottle.route(url, method, handler)
 
 # -----------------------------------------------
 # Request handlers
 # -----------------------------------------------
+
+# TODO add authentication
 
 # favicon.ico handling
 def handle_favicon():
