@@ -4,11 +4,6 @@
 #   Manager for pywebase
 #
 
-import os
-import sys
-import settings
-
-from packages import bottle
 from packages import pywebase
 
 # -----------------------------------------------
@@ -30,10 +25,11 @@ pywebase.add_routes(
 
 if __name__ == '__main__':
     
+    import sys
     from packages import pyservice
 
     if len(sys.argv) == 2 and sys.argv[1] in 'start stop restart status'.split():
         pyservice.service('packages.pywebase.PywebaseProcess', sys.argv[1])
     else:
-        print 'usage: manager <start,stop,restart,status>'
+        print 'usage: manage <start,stop,restart,status>'
 
