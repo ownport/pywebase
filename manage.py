@@ -12,15 +12,20 @@ from packages import bottle
 from packages import pywebase
 
 # -----------------------------------------------
-#   Application functions
+#   Application functions (they can be changed 
+#   in your application)
 # -----------------------------------------------
 
-bottle.route('/', 'GET', pywebase.handle_index)
-bottle.route('/favicon.ico', 'GET', pywebase.handle_favicon)
-bottle.route('/static/<filepath:path>', 'GET', pywebase.handle_static)
+pywebase.add_routes(
+    ('/', 'GET', pywebase.handle_index),
+    ('/favicon.ico', 'GET', pywebase.handle_favicon),
+    ('/static/<filepath:path>', 'GET', pywebase.handle_static),
+    ('/login', 'GET', pywebase.handle_login),
+    ('/logout', 'GET', pywebase.handle_logout),
+)
 
 # -----------------------------------------------
-#   Application
+#   Main
 # -----------------------------------------------
 
 if __name__ == '__main__':

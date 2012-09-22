@@ -32,7 +32,15 @@ class PywebaseProcess(pyservice.Process):
         bottle.run(host='localhost', port=8080, debug=settings.DEBUG_MODE)
 
 # -----------------------------------------------
-# Basic functions
+# utils
+# -----------------------------------------------
+def add_routes(*routes):
+    ''' add static/dynamic routes '''
+    for url, method, handler in routes:
+        bottle.route(url, method, handler)
+
+# -----------------------------------------------
+# Request handlers
 # -----------------------------------------------
 
 # favicon.ico handling
@@ -47,3 +55,13 @@ def handle_static(filepath):
 def handle_index():
     return bottle.template('index', dict(name='pywebase'))
 
+# login form
+def handle_login():
+    return 
+    
+# logout
+def handle_logout():
+    return     
+    
+    
+    
