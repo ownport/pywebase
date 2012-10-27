@@ -31,7 +31,7 @@ class PywebaseProcess(pyservice.Process):
         BaseHTTPRequestHandler.log_message = log_message
             
     def run(self):
-        logging.info('pywebase {} server starting up'.format(bottle.__version__))
+        logging.info('pywebase/bootle-{} server starting up'.format(bottle.__version__))
         bottle.TEMPLATE_PATH.append(settings.TEMPLATE_PATH)
         bottle.run(host='localhost', port=8080, debug=settings.DEBUG_MODE)
 
